@@ -36,8 +36,36 @@
         </Setter>
     </Style>
 
+
     <Style TargetType="Button" x:Key="DefaultButton">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontFamily" Value="\Resouces\Fonts\Manrope-Bold.ttf"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="#0a335c"/>
+        <Setter Property="Padding" Value="20 0"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderBrush" Value="#FF0FAEFB"/>
+        <Setter Property="Background" Value="#FFDFF4FE"/>
+        <Setter Property="Cursor" Value="Hand"/>
+
+        <Setter Property="Template">
+            <Setter.Value
+        </Setter>
+
+    </Style>
+    
+    
+    
+    <Style TargetType="Button" x:Key="IconButton">
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Cursor" Value="Hand"/>
         
+
     </Style>
     
 </ResourceDictionary>
