@@ -3,10 +3,17 @@
 
     <Style TargetType="TextBlock" x:Key="Отсутствует">
         <Setter Property="FontSize" Value="20"/>
-        <Setter Property="FontFamily" Value="\Resouces\Fonts\Manrope-Medium.ttf"/>
+        <Setter Property="FontFamily" Value="\Resouces\Fonts\#Manrope"/>
         <Setter Property="Foreground" Value="#0a335c"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
 
+    <Style TargetType="TextBlock" x:Key="LogoTextBlock">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontFamily" Value="\Resouces\Fonts\#Manrope"/>
+        <Setter Property="Foreground" Value="#0FAEFB"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
 </ResourceDictionary>

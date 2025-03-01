@@ -3,7 +3,7 @@
 
     <Style TargetType="Button" x:Key="MenuButton">
         <Setter Property="FontSize" Value="20"/>
-        <Setter Property="FontFamily" Value="\Fonts\Manrope-Bold.ttf"/>
+        <Setter Property="FontFamily" Value="\Fonts\#Manrope"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="#0a335c"/>
         <Setter Property="FontWeight" Value="Bold"/>
@@ -39,7 +39,7 @@
 
     <Style TargetType="Button" x:Key="DefaultButton">
         <Setter Property="FontSize" Value="20"/>
-        <Setter Property="FontFamily" Value="\Resouces\Fonts\Manrope-Bold.ttf"/>
+        <Setter Property="FontFamily" Value="\Resouces\Fonts\#Manrope"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="#0a335c"/>
         <Setter Property="Padding" Value="20 0"/>
