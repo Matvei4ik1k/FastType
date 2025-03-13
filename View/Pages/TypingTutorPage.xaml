@@ -19,21 +19,30 @@
             <RowDefinition Height="1*"/>
 
         </Grid.RowDefinitions>
+        
+        <TextBlock Name="TypingTutorTbl" FontSize="35" Foreground="#0a335c" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Тестовый текст, который очень сложно печатать"/>
+        
+        <TextBox Name="TypingTutorTb" Grid.Row="2" Style="{StaticResource TypingTutorTextBox}"/>
+        
+        <!--#region Статистика-->
+        <!--#endregion-->
 
-        <Grid Name="KeyboardGrid" Grid.Row="6">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="5"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="5"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="5"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="5"/>
-                <RowDefinition Height="50"/>
-            </Grid.RowDefinitions>
+        <!--#region Клавиатура-->
+        <Viewbox Grid.Row="6" HorizontalAlignment="Center">
+            <Grid Name="KeyboardGrid" Grid.Row="6">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Content="ё" Style="{StaticResource GrayKeyboardKey}"/>
                     <Button Content="1" Style="{StaticResource PurpleKeyboardKey}"/>
                     <Button Content="2" Style="{StaticResource PurpleKeyboardKey}"/>
@@ -47,7 +56,7 @@
                     <Button Content="0"  Style="{StaticResource PurpleKeyboardKey}"/>
                     <Button Content="-"  Style="{StaticResource PurpleKeyboardKey}"/>
                     <Button Content="="  Style="{StaticResource PurpleKeyboardKey}"/>
-                <Button Content="←" Width="80" Style="{StaticResource GrayKeyboardKey}"/>
+                    <Button Content="←" Width="80" Style="{StaticResource GrayKeyboardKey}"/>
                 </StackPanel>
                 <StackPanel Grid.Row="2" Orientation="Horizontal"  HorizontalAlignment="Center">
                     <Button Content="Tab" Width="80" Style="{StaticResource GrayKeyboardKey}"/>
@@ -98,5 +107,8 @@
                     <Button Content="Space" Width="350" Style="{StaticResource GrayKeyboardKey}"/>
                 </StackPanel>
             </Grid>
+        </Viewbox>
+        <!--#endregion-->
+        
     </Grid>
 </Page>
