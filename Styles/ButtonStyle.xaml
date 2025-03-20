@@ -13,7 +13,6 @@
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Cursor" Value="Hand"/>
-        
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -35,7 +34,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
 
     <Style TargetType="Button" x:Key="DefaultButton">
         <Setter Property="FontSize" Value="20"/>
@@ -69,9 +67,7 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-
     </Style>
-    
     
     <Style TargetType="Button" x:Key="IconButton">
         <Setter Property="Padding" Value="10"/>
@@ -98,7 +94,6 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-
     </Style>
 
     <Style TargetType="Button" x:Key="KeyboardKey">
@@ -122,38 +117,44 @@
                         <ContentPresenter HorizontalAlignment="Center"
                                          VerticalAlignment="Center"/>
                     </Border>
-
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
-
-
     <Style TargetType="Button" x:Key="GrayKeyboardKey" BasedOn="{StaticResource KeyboardKey}">
         <Setter Property="Background" Value="#FFDBE2E5"/>
-
+        <Setter Property="BorderBrush" Value="#FF4c5052"/>
+        <Setter Property="BorderThickness" Value="0"/>
     </Style>
 
     <Style TargetType="Button" x:Key="PurpleKeyboardKey" BasedOn="{StaticResource KeyboardKey}">
         <Setter Property="Background" Value="#FFC9C9FD"/>
-
+        <Setter Property="BorderBrush" Value="#FF2c2d69"/>
+        <Setter Property="BorderThickness" Value="0"/>
     </Style>
 
     <Style TargetType="Button" x:Key="GreenKeyboardKey" BasedOn="{StaticResource KeyboardKey}">
         <Setter Property="Background" Value="#FFAEF2C9"/>
-
+        <Setter Property="BorderBrush" Value="#ff1c703e"/>
+        <Setter Property="BorderThickness" Value="0"/>
     </Style>
 
     <Style TargetType="Button" x:Key="RedKeyboardKey" BasedOn="{StaticResource KeyboardKey}">
         <Setter Property="Background" Value="#FFFEBDCA"/>
-
+        <Setter Property="BorderBrush" Value="#FF81162a"/>
+        <Setter Property="BorderThickness" Value="0"/>
     </Style>
+    
     <Style TargetType="Button" x:Key="BlueKeyboardKey" BasedOn="{StaticResource KeyboardKey}">
         <Setter Property="Background" Value="#FF98E9E5"/>
-
+        <Setter Property="BorderBrush" Value="#FF07635f"/>
+        <Setter Property="BorderThickness" Value="0"/>
     </Style>
+    
     <Style TargetType="Button" x:Key="YellowKeyboardKey" BasedOn="{StaticResource KeyboardKey}">
         <Setter Property="Background" Value="#FFFFEA9F"/>
+        <Setter Property="BorderBrush" Value="#FF806515"/>
+        <Setter Property="BorderThickness" Value="0"/>
     </Style>
 </ResourceDictionary>
