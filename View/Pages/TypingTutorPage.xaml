@@ -19,11 +19,11 @@
             <RowDefinition Height="1*"/>
 
         </Grid.RowDefinitions>
-        
+
         <TextBlock Name="TypingTutorTbl" FontSize="35" Foreground="#0a335c" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Тестовый текст, который очень сложно печатать"/>
-        
-        <TextBox Name="TypingTutorTb" Grid.Row="2" Style="{StaticResource TypingTutorTextBox}"/>
-        
+
+        <TextBox TextAlignment="Center" Name="TypingTutorTb" Grid.Row="2" Style="{StaticResource TypingTutorTextBox}"/>
+
         <!--#region Статистика-->
         <!--#endregion-->
 
@@ -109,6 +109,6 @@
             </Grid>
         </Viewbox>
         <!--#endregion-->
-        
+
     </Grid>
 </Page>
