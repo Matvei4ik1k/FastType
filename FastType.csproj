@@ -8,7 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resouces\Images\icon.ico" />
+    <None Remove="Resouces\Images\reload-icon.png" />
+    <None Remove="Resouces\Images\type-speed-icon.png" />
+    <None Remove="Resouces\Images\welcome.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Model\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resouces\Images\icon.ico" />
+    <Resource Include="Resouces\Images\reload-icon.png" />
+    <Resource Include="Resouces\Images\type-speed-icon.png" />
+    <Resource Include="Resouces\Images\welcome.png" />
   </ItemGroup>
 
 </Project>

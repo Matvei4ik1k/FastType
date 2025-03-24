@@ -8,7 +8,7 @@
       d:DesignHeight="582" d:DesignWidth="1240"
       Title="Тренажёр для печати">
 
-    <Grid Background="gray">
+    <Grid Background="white">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="20"/>
@@ -25,6 +25,32 @@
         <TextBox TextAlignment="Center" Name="TypingTutorTb" Grid.Row="2" Style="{StaticResource TypingTutorTextBox}"/>
 
         <!--#region Статистика-->
+        <Grid Grid.Row="4" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Style="{StaticResource IconButton}" Focusable="False" Cursor="Hand">
+                <Button.Content>
+                    <Image Source="\Resouces\Images\reload-icon.png"/>
+                </Button.Content>
+            </Button>
+            <ProgressBar Name="TypingProgressPb" Grid.Column="2" Minimum="0" Maximum="100" Height="25" Focusable="False"/>
+            <Image Grid.Column="4" Width="30"/>
+            <TextBlock Name="AccuracyTbl" Grid.Column="6" Focusable="False" Text="0%"/>
+            <Image Grid.Column="8" Source="\Resouces\Images\type-speed-icon.png" Width="30"/>
+            <TextBlock Name="SpeedTbl" Grid.Column="10" Focusable="False" Text="0 СВМ" />
+        </Grid>
         <!--#endregion-->
 
         <!--#region Клавиатура-->
@@ -72,7 +98,7 @@
                     <Button Tag="P" Content="з"  Style="{StaticResource PurpleKeyboardKey}"/>
                     <Button Tag="OemOpenBrackets" Content="х"  Style="{StaticResource PurpleKeyboardKey}"/>
                     <Button Tag="Oem6" Content="ъ"  Style="{StaticResource PurpleKeyboardKey}"/>
-                    <Button Tag="Oem6" Content="\" Style="{StaticResource GrayKeyboardKey}"/>
+                    <Button Tag="Oem5" Content="\" Style="{StaticResource GrayKeyboardKey}"/>
                 </StackPanel>
                 <StackPanel Grid.Row="4" Orientation="Horizontal"  HorizontalAlignment="Center">
                     <Button Tag="Capital" Content="Caps" Width="100"  Style="{StaticResource GrayKeyboardKey}"/>
@@ -85,7 +111,7 @@
                     <Button Tag="J" Content="о" Style="{StaticResource YellowKeyboardKey}"/>
                     <Button Tag="K" Content="л" Style="{StaticResource RedKeyboardKey}"/>
                     <Button Tag="L" Content="д" Style="{StaticResource GreenKeyboardKey}"/>
-                    <Button Tag="Capital" Content="ж"  Style="{StaticResource PurpleKeyboardKey}"/>
+                    <Button Tag="Oem1" Content="ж"  Style="{StaticResource PurpleKeyboardKey}"/>
                     <Button Tag="OemQuotes" Content="э"  Style="{StaticResource PurpleKeyboardKey}"/>
                     <Button Tag="Return" Content="Enter" Width="90" Style="{StaticResource GrayKeyboardKey}"/>
                 </StackPanel>

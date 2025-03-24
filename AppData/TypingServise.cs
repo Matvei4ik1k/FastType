@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Diagnostics;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -7,10 +8,20 @@ namespace FastType.AppData
 {
     public class TypingServise
     {
+        //Создаем поля для хранения и использования переменных для внутренней логики класса.
+
+        private Stopwatch _stopwatch;
+
+        private int _numberOfCharacters;
+        private int _ellapsedTimeinMinutes;
+
         //Поля для хранения и использования в рамках класса.
         private Grid _keyboardGrid;
         private TextBox _typingTextBox;
         private TextBlock _typintTextBlock;
+
+        //Создаем свойство для получения и присваивания расчетов
+        public int TypeSpeed { get; private set; }
 
         //Создаем конструктор класса для приема элементов управления из интерфейса (TypingTutorPage.xaml)
         public TypingServise(Grid keyboardGrid, TextBox typingTextBox, TextBlock typintTextBlock)
@@ -20,6 +31,14 @@ namespace FastType.AppData
             _typintTextBlock = typintTextBlock;
             _typingTextBox.PreviewKeyDown += _typingTextBox_PreviewKeyDown;
             _typingTextBox.PreviewKeyUp += _typingTextBox_PreviewKeyUp;
+            _typingTextBox.TextChanged += _typingTextBox_TextChanged;
+        }
+
+
+
+        private void _typingTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (_typingTextBox.Text.Length >= 1 && !_stopwatch.IsRunning)
         }
 
         private void _typingTextBox_PreviewKeyUp(object sender, System.Windows.Input.KeyEventArgs e)
