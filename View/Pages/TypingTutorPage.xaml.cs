@@ -12,7 +12,7 @@ namespace FastType.View.Pages
         public TypingTutorPage()
         {
             InitializeComponent();
-            _typingService = new TypingServise(KeyboardGrid, TypingTutorTb, TypingTutorTbl);
+            _typingService = new TypingServise(KeyboardGrid, TypingTutorTb, TypingTutorTbl, SpeedTbl);
         }
     }
 }

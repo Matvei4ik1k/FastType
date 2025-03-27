@@ -12,36 +12,47 @@ namespace FastType.AppData
 
         private Stopwatch _stopwatch;
 
-        private int _numberOfCharacters;
-        private int _ellapsedTimeinMinutes;
-
         //Поля для хранения и использования в рамках класса.
         private Grid _keyboardGrid;
         private TextBox _typingTextBox;
         private TextBlock _typintTextBlock;
+        private TextBlock _speedtextBlock;
 
         //Создаем свойство для получения и присваивания расчетов
-        public int TypeSpeed { get; private set; }
+        public double TypeSpeed { get; private set; }
 
         //Создаем конструктор класса для приема элементов управления из интерфейса (TypingTutorPage.xaml)
-        public TypingServise(Grid keyboardGrid, TextBox typingTextBox, TextBlock typintTextBlock)
+        public TypingServise(Grid keyboardGrid, TextBox typingTextBox, TextBlock typintTextBlock, TextBlock speedtextBlock)
         {
+            _stopwatch = new Stopwatch();
             _keyboardGrid = keyboardGrid;
             _typingTextBox = typingTextBox;
             _typintTextBlock = typintTextBlock;
+            _speedtextBlock = speedtextBlock;
             _typingTextBox.PreviewKeyDown += _typingTextBox_PreviewKeyDown;
             _typingTextBox.PreviewKeyUp += _typingTextBox_PreviewKeyUp;
             _typingTextBox.TextChanged += _typingTextBox_TextChanged;
         }
 
-
-
         private void _typingTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (_typingTextBox.Text.Length >= 1 && !_stopwatch.IsRunning)
+            {
+                _stopwatch.Start();
+            }
+
+            if (_typingTextBox.Text == _typintTextBlock.Text)
+            {
+                _stopwatch.Stop();
+            }
+
+            if (_typingTextBox.Text.Length >= 5)
+            {
+                _speedtextBlock.Text = CalculateSpeed();
+            }
         }
 
-        private void _typingTextBox_PreviewKeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        private void _typingTextBox_PreviewKeyUp(object sender, KeyEventArgs e)
         {
             var button = FindButtonByKey(e.Key);
             if (button != null)
@@ -50,7 +61,7 @@ namespace FastType.AppData
             }
         }
 
-        private void _typingTextBox_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        private void _typingTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             var button = FindButtonByKey(e.Key);
             if (button != null)
@@ -72,6 +83,13 @@ namespace FastType.AppData
                 }
             }
             return null;
+        }
+
+        private string CalculateSpeed()
+        {
+
+            TypeSpeed = _typingTextBox.Text.Length / _stopwatch.Elapsed.TotalMinutes;
+            return $"{TypeSpeed:F0} СВМ";
         }
     }
 }
