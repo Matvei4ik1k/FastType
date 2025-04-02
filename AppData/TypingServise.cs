@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,12 +18,12 @@ namespace FastType.AppData
         private TextBox _typingTextBox;
         private TextBlock _typintTextBlock;
         private TextBlock _speedtextBlock;
-
+        private ProgressBar _progressBar;
         //Создаем свойство для получения и присваивания расчетов
         public double TypeSpeed { get; private set; }
 
         //Создаем конструктор класса для приема элементов управления из интерфейса (TypingTutorPage.xaml)
-        public TypingServise(Grid keyboardGrid, TextBox typingTextBox, TextBlock typintTextBlock, TextBlock speedtextBlock)
+        public TypingServise(Grid keyboardGrid, TextBox typingTextBox, TextBlock typintTextBlock, TextBlock speedtextBlock, ProgressBar progressBar)
         {
             _stopwatch = new Stopwatch();
             _keyboardGrid = keyboardGrid;
@@ -32,6 +33,7 @@ namespace FastType.AppData
             _typingTextBox.PreviewKeyDown += _typingTextBox_PreviewKeyDown;
             _typingTextBox.PreviewKeyUp += _typingTextBox_PreviewKeyUp;
             _typingTextBox.TextChanged += _typingTextBox_TextChanged;
+            _progressBar = progressBar;
         }
 
         private void _typingTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -46,10 +48,11 @@ namespace FastType.AppData
                 _stopwatch.Stop();
             }
 
-            if (_typingTextBox.Text.Length >= 5)
+            if (_typingTextBox.Text.Length >= 2)
             {
                 _speedtextBlock.Text = CalculateSpeed();
             }
+            UpdateProgress();
         }
 
         private void _typingTextBox_PreviewKeyUp(object sender, KeyEventArgs e)
@@ -90,6 +93,12 @@ namespace FastType.AppData
 
             TypeSpeed = _typingTextBox.Text.Length / _stopwatch.Elapsed.TotalMinutes;
             return $"{TypeSpeed:F0} СВМ";
+        }
+        private void UpdateProgress()
+        {
+            double rezult = _typingTextBox.Text.Length * 100.0 / _typintTextBlock.Text.Length;
+
+            _progressBar.Value = Math.Floor(rezult);
         }
     }
 }

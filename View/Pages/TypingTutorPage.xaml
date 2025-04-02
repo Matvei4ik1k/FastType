@@ -40,7 +40,7 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
-            <Button Style="{StaticResource IconButton}" Focusable="False" Cursor="Hand">
+            <Button Name="RestartBtn" Click="RestartBtn_Click" Style="{StaticResource IconButton}" Focusable="False" Cursor="Hand">
                 <Button.Content>
                     <Image Source="\Resouces\Images\reload-icon.png"/>
                 </Button.Content>

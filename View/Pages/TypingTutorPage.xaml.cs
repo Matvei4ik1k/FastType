@@ -12,7 +12,12 @@ namespace FastType.View.Pages
         public TypingTutorPage()
         {
             InitializeComponent();
-            _typingService = new TypingServise(KeyboardGrid, TypingTutorTb, TypingTutorTbl, SpeedTbl);
+            _typingService = new TypingServise(KeyboardGrid, TypingTutorTb, TypingTutorTbl, SpeedTbl, TypingProgressPb);
+        }
+
+        private void RestartBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new TypingTutorPage());
         }
     }
 }

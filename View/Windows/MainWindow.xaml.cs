@@ -24,5 +24,10 @@ namespace FastType
         {
             InitializeComponent();
         }
+
+        private void TypingTutorBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
