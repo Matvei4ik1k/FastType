@@ -13,7 +13,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <!--#region Меню -->
+        <!-- #region Меню -->
         <Grid Height="70">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
@@ -28,9 +28,18 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Text="FastType" Style="{StaticResource LogoTextBlock}"/>
-            <Button Name="TypingTutorBtn" Grid.Column="2" Content="Тренажёр" Style="{StaticResource MenuButton}" Click="TypingTutorBtn_Click"/>
-            <Button Grid.Column="4" Content="Рейтинг" Style="{StaticResource MenuButton}"/>
 
+            <Button Name="TypingTutorBtn" Grid.Column="2" Content="Тренажёр" Style="{StaticResource MenuButton}" Click="TypingTutorBtn_Click"/>
+
+            <Button Name="RatingBtn" Click="RatingBtn_Click" Grid.Column="4" Content="Рейтинг" Style="{StaticResource MenuButton}"/>
+
+            <Button Name="ProfileBtn" Click="ProfileBtn_Click" Grid.Column="8" Content="Профиль" Style="{StaticResource MenuButton}"/>
         </Grid>
+        <!-- #endregion -->
+
+        <!-- #region Страничная навигация -->
+        <Frame Name="MainFraime" Grid.Row="2" NavigationUIVisibility="Hidden"/>
+        <!-- #endregion -->
+
     </Grid>
 </Window>
